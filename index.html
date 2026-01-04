@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koenma Sushi - Culinária Japonesa Autêntica</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="login-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal-btn" id="close-modal-x">&times;</button>
+            
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-target="form-login">Entrar</button>
+                <button class="auth-tab" data-target="form-register">Cadastrar</button>
+            </div>
+
+            <form id="form-login" class="auth-form active">
+                <h3>Bem-vindo de volta!</h3>
+                <div class="form-group">
+                    <label>CPF</label>
+                    <input type="text" id="login-cpf" placeholder="Só números" required>
+                </div>
+                <div class="form-group">
+                    <label>Senha</label>
+                    <input type="password" id="login-senha" placeholder="Sua senha" required>
+                </div>
+                <button type="submit" class="btn full-width">Entrar</button>
+            </form>
+
+            <form id="form-register" class="auth-form">
+                <h3>Criar nova conta</h3>
+                <div class="form-group">
+                    <label>Nome Completo</label>
+                    <input type="text" id="reg-nome" required>
+                </div>
+                <div class="form-group">
+                    <label>CPF</label>
+                    <input type="text" id="reg-cpf" placeholder="000.000.000-00" required>
+                </div>
+                <div class="form-group">
+                    <label>Telefone</label>
+                    <input type="tel" id="reg-telefone" required>
+                </div>
+                <div class="form-group">
+                    <label>Endereço de Entrega</label>
+                    <textarea id="reg-endereco" rows="2" placeholder="Rua, Número, Bairro..." required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Crie uma Senha</label>
+                    <input type="password" id="reg-senha" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Repita a Senha</label>
+                    <input type="password" id="reg-senha-confirm" placeholder="Confirme sua senha" required>
+                </div>
+
+                <button type="submit" class="btn full-width">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="#home">
+                        <img src="images/logo-icon.jpg" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2252/2252075.png'" alt="Koenma Sushi" class="logo-icon">
+                        <span class="logo-text">Koenma Sushi</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li><a href="#home"><i class="fas fa-home"></i> Início</a></li>
+                    <li><a href="#menu"><i class="fas fa-utensils"></i> Cardápio</a></li>
+                    <li><a href="#about"><i class="fas fa-info-circle"></i> Sobre</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contato</a></li>
+                    
+                    <li>
+                        <button id="header-login-btn" class="nav-login-btn">
+                            <i class="fas fa-user"></i> Entrar
+                        </button>
+                    </li>
+
+                    <li>
+                        <a href="#" class="cart-icon" id="cart-toggle">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Seu Carrinho</h2>
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+        
+        <div class="cart-items" id="cart-items">
+            </div>
+        
+        <div class="cart-total">
+            <p>Total: R$ <span id="cart-total-price">0.00</span></p>
+            <button class="checkout-btn" id="checkout-btn">Finalizar Pedido</button>
+        </div>
+    </div>
+
+    <section id="home" class="hero">
+        <div class="carousel-container">
+            
+            <div class="slide active">
+                <img src="images/combo-casal.jpg" onerror="this.src='https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=1470&q=80'" alt="Sushi Variado">
+                <div class="slide-content">
+                    <h2>Sushi Fresco e Autêntico</h2>
+                    <p>Experimente o verdadeiro sabor do Japão</p>
+                    <a href="#menu" class="btn">Ver Cardápio</a>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <img src="images/sashimi-salmao.jpg" onerror="this.src='https://www.infoescola.com/wp-content/uploads/2011/01/sashimi_319387313.jpg'" alt="Sashimi">
+                <div class="slide-content">
+                    <h2>Sashimi Premium</h2>
+                    <p>Cortes nobres selecionados pelo Chef</p>
+                    <a href="#menu" class="btn">Peça Agora</a>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <img src="images/temaki-salmao.jpg" onerror="this.src='https://media.istockphoto.com/id/612002744/pt/foto/salmon-temaki-ginger-and-sauce-horizontal-top-view.jpg?s=612x612&w=0&k=20&c=NzzQeEqkIJ5XshXsju01YIwW_QUeqATB-p8KCYPSXeE='" alt="Temaki">
+                <div class="slide-content">
+                    <h2>Temakis Crocantes</h2>
+                    <p>Alga fresquinha e muito recheio</p>
+                    <a href="#menu" class="btn">Ver Opções</a>
+                </div>
+            </div>
+
+            <button class="carousel-btn prev" id="prev-btn">&#10094;</button>
+            <button class="carousel-btn next" id="next-btn">&#10095;</button>
+            
+            <div class="carousel-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <h2 class="section-title">Nosso Cardápio</h2>
+            
+            <div class="menu-categories">
+                <button class="category-btn active" data-category="all">Todos</button>
+                <button class="category-btn" data-category="combos">Combos 🔥</button>
+                <button class="category-btn" data-category="entradas">Entradas</button>
+                <button class="category-btn" data-category="sushi">Sushi</button>
+                <button class="category-btn" data-category="sashimi">Sashimi</button>
+                <button class="category-btn" data-category="temaki">Temaki</button>
+                <button class="category-btn" data-category="hot">Pratos Quentes</button>
+                <button class="category-btn" data-category="sobremesas">Sobremesas</button>
+                <button class="category-btn" data-category="bebidas">Bebidas</button>
+            </div>
+            
+            <div class="menu-items" id="menu-items">
+                </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Sobre o Koenma Sushi</h2>
+                    <p>Há mais de 15 anos, o Koenma Sushi traz a autêntica culinária japonesa para os amantes da gastronomia. Nossos chefs são treinados no Japão e utilizam apenas ingredientes frescos e de alta qualidade.</p>
+                    <div class="about-features">
+                        <div class="feature"><i class="fas fa-fish"></i><h3>Ingredientes Frescos</h3></div>
+                        <div class="feature"><i class="fas fa-user-chef"></i><h3>Chefs Especializados</h3></div>
+                        <div class="feature"><i class="fas fa-leaf"></i><h3>Ambiente Aconchegante</h3></div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="images/barca-koenma.jpg" onerror="this.src='https://images.unsplash.com/photo-1553621042-f6e147245754?w=500&q=80'" alt="Barca de Sushi">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div><h3>Endereço</h3><p>Taguatinga Norte<br>Brasilia-DF</p></div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div><h3>Telefone</h3><p>(61) 99458-4504</p></div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <form id="contact-form">
+                        <div class="form-group"><input type="text" id="name" placeholder="Seu nome" required></div>
+                        <div class="form-group"><input type="email" id="email" placeholder="Seu e-mail" required></div>
+                        <div class="form-group"><textarea id="message" placeholder="Sua mensagem" rows="5" required></textarea></div>
+                        <button type="submit" class="btn full-width">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Koenma Sushi</h3>
+                    <p>A melhor experiência em culinária japonesa da cidade.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Koenma Sushi. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <div id="product-modal" class="modal-overlay">
+    <div class="modal-content product-modal-content">
+        <button class="close-modal-btn" id="close-product-modal">&times;</button>
+        
+        <div class="product-modal-body">
+            <div class="product-image">
+                <img id="modal-img" src="" alt="Detalhe do Prato">
+            </div>
+            
+            <div class="product-info">
+                <h2 id="modal-title">Nome do Prato</h2>
+                <p id="modal-desc" class="product-desc">Descrição completa do prato...</p>
+                <div class="modal-footer">
+                    <span id="modal-price" class="product-price">R$ 0,00</span>
+                    <button id="modal-add-btn" class="btn">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
