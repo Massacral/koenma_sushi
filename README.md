@@ -13,8 +13,8 @@
 ## 📸 Demonstração
 
 <div align="center">
-  <p><em>(<img width="1919" height="956" alt="image" src="https://github.com/user-attachments/assets/86c4f58c-15f2-461d-8e67-4c36764395c1" />
-)</em></p>
+  <p><em><img width="1919" height="956" alt="image" src="https://github.com/user-attachments/assets/86c4f58c-15f2-461d-8e67-4c36764395c1" />
+</em></p>
 </div>
 
 ---
